@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import styles from "./Navbar.module.css";
+import SoMeContainer from "../SoMeContainer/SoMeContainer";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
 const Navbar = () => {
@@ -9,7 +10,7 @@ const Navbar = () => {
       {/* First row */}
       <div className={styles.firstRow}>
         <div className={styles.buttonContainer}>
-          <Button className={styles.loginButton}>Log in</Button>
+          <Button className={styles.loginButton}>LOG IN</Button>
         </div>
         <div className={styles.logoContainer}>
           <Link to="/">
@@ -20,42 +21,7 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div className={styles.someContainer}>
-          <a href="https://www.instagram.com/diavola.official/" target="_blank">
-            <img
-              src="/Assets/Icons/instagram-svgrepo-com.svg"
-              alt="Instagram"
-              className={styles.soMeIcon}
-            />
-          </a>
-          <a
-            href="https://www.facebook.com/profile.php?id=61556028067557&locale=nb_NO"
-            target="_blank"
-          >
-            <img
-              src="/Assets/Icons/facebook-svgrepo-com.svg"
-              alt="Facebook"
-              className={styles.soMeIcon}
-            />
-          </a>
-          <a href="https://www.tiktok.com/@diavola.official" target="_blank">
-            <img
-              src="/Assets/Icons/tiktok-svgrepo-com.svg"
-              alt="Tiktok"
-              className={styles.soMeIcon}
-            />
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UC1WGSW8CAcNq4QCR3lUoUxA"
-            target="_blank"
-          >
-            <img
-              src="/Assets/Icons/youtube-svgrepo-com.svg"
-              alt="Youtube"
-              className={styles.soMeIcon}
-            />
-          </a>
-        </div>
+        <SoMeContainer></SoMeContainer>
       </div>
 
       {/* Second row */}
@@ -64,38 +30,38 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) => (isActive ? styles.activeLink : "")}
         >
-          Home
+          HOME
         </NavLink>
         <NavLink
           to="/discography"
           className={({ isActive }) => (isActive ? styles.activeLink : "")}
         >
-          Discography
+          DISCOGRAPHY
         </NavLink>
 
         <NavLink
           to="/merch"
           className={({ isActive }) => (isActive ? styles.activeLink : "")}
         >
-          Merch
+          MERCH
         </NavLink>
         <NavLink
           to="/media"
           className={({ isActive }) => (isActive ? styles.activeLink : "")}
         >
-          Media
+          MEDIA
         </NavLink>
         <NavLink
           to="/about"
           className={({ isActive }) => (isActive ? styles.activeLink : "")}
         >
-          About
+          ABOUT
         </NavLink>
         <NavLink
           to="/contact"
           className={({ isActive }) => (isActive ? styles.activeLink : "")}
         >
-          Contact
+          CONTACT
         </NavLink>
       </div>
     </nav>

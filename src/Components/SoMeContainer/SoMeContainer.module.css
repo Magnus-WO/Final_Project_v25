@@ -1,0 +1,18 @@
+.someContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.someContainer a {
+  color: var(--primary-color);
+}
+
+.someContainer .soMeIcon {
+  width: 2rem;
+  height: 2rem;
+}
+.someContainer .soMeIcon:hover {
+  opacity: var(--hover-opacity);
+}

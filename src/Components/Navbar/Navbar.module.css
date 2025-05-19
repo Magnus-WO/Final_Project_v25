@@ -13,7 +13,7 @@
   /* border: 2px solid white; */
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 
   gap: var(--space-md);
@@ -50,25 +50,6 @@
 .logoContainer .navbarLogo {
   width: 17rem;
   height: 4rem;
-}
-
-.someContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-}
-
-.someContainer a {
-  color: var(--primary-color);
-}
-
-.someContainer .soMeIcon {
-  width: 2rem;
-  height: 2rem;
-}
-.someContainer .soMeIcon:hover {
-  opacity: var(--hover-opacity);
 }
 
 /* Second row */

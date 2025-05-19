@@ -13,9 +13,27 @@ a {
   text-decoration: none;
 }
 
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button {
+  font-family: diavola;
+  letter-spacing: 3px;
+}
+
+@font-face {
+  font-family: diavola;
+  src: url("/Assets/Fonts/Diavola.otf");
+}
+
 /* Variables */
 
 :root {
+  --font-main: diavola;
   --background-image: url("/Assets/Images/Bakgrunn.jpeg");
 
   /* Colors */
