@@ -1,0 +1,98 @@
+.navbar {
+  background-image: var(--background-image);
+  background-size: cover;
+  width: 100%;
+  height: 25vh;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* First row */
+.firstRow {
+  height: 70%;
+  width: 100%;
+  /* border: 2px solid white; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--space-md);
+  padding: var(--space-xl);
+}
+.buttonContainer,
+.logoContainer,
+.someContainer {
+  color: var(--primary-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonContainer .loginButton {
+  height: 3rem;
+  width: 10rem;
+  font-size: var(--font-size-base);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--primary-color);
+  background-color: var(--bg-color-muted);
+}
+
+.buttonContainer .loginButton:hover {
+  opacity: var(--hover-opacity);
+}
+
+.logoContainer {
+  flex-grow: 2;
+}
+
+.logoContainer .navbarLogo {
+  width: 17rem;
+  height: 4rem;
+}
+
+.someContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.someContainer a {
+  color: var(--primary-color);
+}
+
+.someContainer .soMeIcon {
+  width: 2rem;
+  height: 2rem;
+}
+.someContainer .soMeIcon:hover {
+  opacity: var(--hover-opacity);
+}
+
+/* Second row */
+.secondRow {
+  width: 100%;
+  height: 30%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-xxl);
+
+  padding: var(--space-sm);
+}
+
+.secondRow a {
+  color: var(--primary-color);
+  font-size: var(--font-size-md);
+}
+
+.secondRow a:hover {
+  opacity: var(--hover-opacity);
+}
+
+.activeLink {
+  text-decoration: underline;
+}

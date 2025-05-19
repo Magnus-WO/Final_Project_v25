@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Variables */
+
+:root {
+  --background-image: url("/Assets/Images/Bakgrunn.jpeg");
+
+  /* Colors */
+  --primary-color: #e4e4e4;
+  --bg-color-muted: #00000054;
+
+  --hover-opacity: 0.8;
+
+  /* Spacing */
+  --space-sm: 0.8rem;
+  --space-base: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+
+  /* Font size */
+  --font-size-sm: 0.8rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.3rem;
+  --font-size-lg: 2rem;
+  --font-size-xl: 3rem;
+
+  --border-radius-sm: 5px;
+}
