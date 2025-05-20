@@ -1,5 +1,6 @@
 import Navbar from "./Components/Navbar/Navbar";
 import HeroSection from "./Components/HeroSection/HeroSection";
+import Album from "./Components/Album/Album";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
       <Navbar></Navbar>
       <HeroSection></HeroSection>
+
       <Outlet></Outlet>
     </>
   );

@@ -1,0 +1,82 @@
+.album {
+  height: 60vh;
+  width: 100%;
+  border-top: 1px solid var(--primary-color);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.album .headerContainer {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: var(--font-size-lg);
+}
+
+.album .artworkContainer {
+  height: 70%;
+  width: 50%;
+  text-align: end;
+}
+
+.artworkContainer .albumArtwork {
+  height: 320px;
+  width: 320px;
+}
+
+.album .audioContainer {
+  height: 70%;
+  width: 50%;
+}
+
+.audioContainer .titleContainer,
+.audioContainer .buttonsContainer {
+  height: 20%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.audioContainer .titleContainer,
+.audioContainer .buttonsContainer,
+.audioContainer .songsContainer {
+  padding: var(--space-md);
+  color: var(--primary-color);
+}
+
+.audioContainer .buttonsContainer {
+  gap: var(--space-md);
+}
+
+.buttonsContainer .audioPlayer {
+  height: 30px;
+  width: 20rem;
+}
+
+.buttonsContainer .audioButton:hover {
+  opacity: var(--hover-opacity);
+}
+
+.audioContainer .songsContainer {
+  height: 60%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.songsContainer .songButton {
+  color: var(--primary-color);
+}
+
+.songsContainer .songButton:hover {
+  opacity: var(--hover-opacity);
+}
