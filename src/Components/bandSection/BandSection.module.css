@@ -1,0 +1,41 @@
+.cardSection {
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
+  background: url(/Assets/Images/Bakgrunn.jpeg);
+  background-size: cover;
+}
+
+.headerContainer {
+  width: 100%;
+  height: 20%;
+  color: var(--primary-color);
+  padding: var(--space-md);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-md);
+}
+
+.headerContainer h1 {
+  font-size: var(--font-size-lg);
+}
+
+.headerContainer p {
+  font-size: var(--font-size-md);
+}
+
+.cardsContainer {
+  width: 100%;
+  height: 80%;
+  border: 1px solid var(--primary-color);
+  padding: var(--space-md);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem 9rem;
+}
