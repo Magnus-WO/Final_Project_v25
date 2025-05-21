@@ -43,6 +43,7 @@ button {
   --hover-opacity: 0.8;
 
   /* Spacing */
+  --space-xs: 0.5rem;
   --space-sm: 0.8rem;
   --space-base: 1rem;
   --space-md: 1.5rem;

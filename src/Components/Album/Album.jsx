@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Album.module.css";
 import Button from "../Button/Button";
 
-import audioFiles from "../../audio";
+import audioFiles from "../../JS/audio";
 
 const Album = () => {
   const [audioFile, setAudioFile] = useState({

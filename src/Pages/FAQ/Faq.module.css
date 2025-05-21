@@ -1,0 +1,74 @@
+.faq {
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  background-image: var(--background-image);
+  background-size: cover;
+  display: flex;
+}
+
+/* .faq .headerContainer,
+.faq .cardsContainer {
+  border: 2px solid #f5f5f5;
+} */
+
+.faq .headerContainer {
+  color: var(--primary-color);
+  width: 50%;
+  padding: var(--space-lg) var(--space-xxl);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-lg);
+}
+
+.headerContainer h1 {
+  font-size: var(--font-size-lg);
+}
+
+.headerContainer p {
+  font-size: var(--font-size-md);
+}
+
+.headerContainer .contactButton {
+  height: 2.5rem;
+  width: 6rem;
+  background-color: var(--bg-color-muted);
+
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+
+  letter-spacing: 3px;
+  font-size: var(--font-size-sm);
+}
+
+.headerContainer .contactButton:hover {
+  box-shadow: var(--box-shadow);
+  opacity: var(--hover-opacity);
+}
+
+.faq .cardsContainer {
+  color: var(--primary-color);
+  width: 50%;
+}
+
+/* --------------- */
+.cardsContainer .faqList {
+  height: 100%;
+  width: 100%;
+
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  padding-right: var(--space-xxl);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.faqList .questionCard {
+  width: 70%;
+  height: fit-content;
+}

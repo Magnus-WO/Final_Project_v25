@@ -1,19 +1,17 @@
 import Navbar from "./Components/Navbar/Navbar";
 import HeroSection from "./Components/HeroSection/HeroSection";
 import Album from "./Components/Album/Album";
-import { Outlet } from "react-router-dom";
 import BandSection from "./Components/bandSection/BandSection";
+import Faq from "./Pages/FAQ/Faq";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Navbar></Navbar>
       <HeroSection></HeroSection>
-      <BandSection
-        // className={bandSection}
-        title="OUR BAND"
-        ingres="Meet the band members of Diavola"
-      ></BandSection>
+      <BandSection></BandSection>
+      <Faq></Faq>
       <Outlet></Outlet>
     </>
   );

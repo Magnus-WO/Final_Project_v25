@@ -39,3 +39,37 @@
   flex-wrap: wrap;
   gap: 2rem 9rem;
 }
+
+/* ----------------------------- */
+
+.memberCard {
+  width: 290px;
+  height: 350px;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-color-muted);
+}
+.imageContainer {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-base);
+}
+
+.cardImage {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--border-radius-sm);
+}
+
+.textContainer {
+  height: 20%;
+  color: var(--primary-color);
+  border-top: 1px solid var(--primary-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}

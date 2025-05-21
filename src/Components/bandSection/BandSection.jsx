@@ -1,17 +1,23 @@
 import styles from "./BandSection.module.css";
 import Card from "../Card/Card";
-import bandMembers from "../../bandMembers";
+import bandMembers from "../../JS/bandMembers";
 
-const CardSection = ({ className, title, ingres, Filter }) => {
+const CardSection = ({ className, Filter }) => {
   return (
     <section className={`${className} ${styles.cardSection}`}>
       <div className={styles.headerContainer}>
-        {title && <h1>{title}</h1>}
-        {ingres && <p>{ingres}</p>}
+        <h1>OUR BAND</h1>
+        <p>Meet the members of Diavola</p>
       </div>
       <div className={styles.cardsContainer}>
         {bandMembers.map((member) => {
-          return <Card member={member} />;
+          return (
+            <Card
+              member={member}
+              className={styles.memberCard}
+              key={member.name}
+            />
+          );
         })}
       </div>
     </section>
