@@ -25,6 +25,7 @@
 .artworkContainer .albumArtwork {
   height: 320px;
   width: 320px;
+  border-radius: var(--border-radius-sm);
 }
 
 .album .audioContainer {

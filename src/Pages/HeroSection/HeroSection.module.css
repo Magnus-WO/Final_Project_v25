@@ -1,7 +1,7 @@
 .heroSection {
   width: 100%;
   height: fit-content;
-  background-image: var(--background-image);
+  background-image: var(--background-image2);
   background-size: cover;
   padding: var(--space-lg);
 

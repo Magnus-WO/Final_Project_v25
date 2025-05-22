@@ -35,10 +35,12 @@ button {
 :root {
   --font-main: diavola;
   --background-image: url("/Assets/Images/Bakgrunn.jpeg");
+  --background-image2: url("/Assets/Images/Bakgrunn2.png");
 
   /* Colors */
   --primary-color: #f5f5f5;
-  --color-error: #560101;
+  --color-text-muted: #d7d7d7;
+  --color-error: #ff0000;
   --color-accent: #9a5a1a;
   --color-green: #4b6b2f;
 

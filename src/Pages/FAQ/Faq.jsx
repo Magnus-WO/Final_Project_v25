@@ -1,6 +1,7 @@
 import styles from "./Faq.module.css";
 import Card from "../../Components/Card/Card";
 import Button from "../../Components/Button/Button";
+import Input from "../../Components/Input/Input";
 import faq from "../../JS/faq";
 
 import useContactFormValidation from "../../Hooks/useContactFormValidation";
@@ -54,14 +55,12 @@ const Faq = () => {
       }, 3000);
       return;
     }
-    console.log("testing");
 
     try {
       const docRef = await addDoc(collection(database, "contact-messages"), {
         ...contactFormData,
         submittedAt: serverTimestamp(),
       });
-      console.log(`document added with id ${docRef.id}`);
       setContactFormData({
         email: "",
         topic: "",
@@ -72,7 +71,7 @@ const Faq = () => {
         setFormValidationMessage("");
       }, 3000);
     } catch (error) {
-      console.log(error);
+      setFormValidationMessage("Couldn´t send message, please try again later");
     }
   };
 
@@ -115,27 +114,28 @@ const Faq = () => {
             <h1>CONTACT US</h1>
             <div className={styles.inputContainer}>
               <label htmlFor="email">Email</label>
-              <input
+              <Input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="someone@example.com"
                 onChange={handleFormData}
                 value={contactFormData.email}
-              />
+              ></Input>
+
               <p className={styles.errorMessage}>{contactErrors.email}</p>
             </div>
 
             <div className={styles.inputContainer}>
               <label htmlFor="topic">Topic</label>
-              <input
+              <Input
                 type="text"
                 name="topic"
-                placeholder="booking"
                 id="topic"
+                placeholder="booking"
                 onChange={handleFormData}
                 value={contactFormData.topic}
-              />
+              ></Input>
               <p className={styles.errorMessage}>{contactErrors.topic}</p>
             </div>
 

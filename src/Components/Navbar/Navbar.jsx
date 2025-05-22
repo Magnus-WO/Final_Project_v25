@@ -21,7 +21,7 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <SoMeContainer></SoMeContainer>
+        <SoMeContainer className={styles.someContainer}></SoMeContainer>
       </div>
 
       {/* Second row */}

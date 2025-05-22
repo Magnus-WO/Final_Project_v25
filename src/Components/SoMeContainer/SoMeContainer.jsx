@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./SoMeContainer.module.css";
 
-const SoMeContainer = () => {
+const SoMeContainer = ({ className }) => {
   return (
-    <div className={styles.someContainer}>
+    <div className={`${className} ${styles.someContainer}`}>
       <a href="https://www.instagram.com/diavola.official/" target="_blank">
         <img
           src="/Assets/Icons/instagram-svgrepo-com.svg"
