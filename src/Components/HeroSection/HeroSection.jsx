@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
-import Album from "../Album/Album";
+import Album from "../../Pages/Album/Album";
 
 const HeroSection = ({}) => {
   return (

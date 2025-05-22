@@ -32,6 +32,7 @@
 /* -----------FAQ------------ */
 .questionHeader {
   border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
   padding: var(--space-xs);
   background-color: var(--bg-color-muted);
 }
@@ -60,4 +61,5 @@
   border-bottom: 1px solid var(--primary-color);
   border-right: 1px solid var(--primary-color);
   border-left: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
 }

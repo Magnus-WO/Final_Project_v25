@@ -1,7 +1,7 @@
 import Navbar from "./Components/Navbar/Navbar";
 import HeroSection from "./Components/HeroSection/HeroSection";
-import Album from "./Components/Album/Album";
-import BandSection from "./Components/bandSection/BandSection";
+import Album from "./Pages/Album/Album";
+import BandSection from "./Pages/bandSection/BandSection";
 import Faq from "./Pages/FAQ/Faq";
 import { Outlet } from "react-router-dom";
 
