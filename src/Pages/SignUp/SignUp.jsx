@@ -2,8 +2,17 @@ import styles from "./SignUp.module.css";
 import Input from "../../Components/Input/Input";
 import Button from "../../Components/Button/Button";
 import useSignUpValidation from "../../Hooks/useSignUpValidation";
+import useAuth from "../../Hooks/useAuthentication";
+
 import { useState } from "react";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import {
+  addDoc,
+  collection,
+  doc,
+  serverTimestamp,
+  setDoc,
+} from "firebase/firestore";
 import { database } from "../../../firebaseConfig";
 
 const SignUp = () => {
@@ -27,7 +36,14 @@ const SignUp = () => {
     setSignUpData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const { validateSignUp, signUpErrors } = useSignUpValidation();
+  // Destructuring sign up validation
+  const { validateSignUp, errors, setErrors } = useSignUpValidation();
+
+  // Destructuring user authentication
+  const { signUp, signUpError, user } = useAuth();
+
+  // Redirection
+  const navigate = useNavigate();
 
   // Handling submit
   const handleSubmit = async (e) => {
@@ -36,12 +52,45 @@ const SignUp = () => {
       setSignUpFeedback("Please address errors");
       return;
     }
-    const docRef = addDoc(collection(database, "users"), signUpData);
+    try {
+      const userCredentials = await signUp(
+        signUpData.email,
+        signUpData.password
+      );
+      const user = userCredentials.user;
+
+      await setDoc(doc(database, "users", user.uid), {
+        uid: user.uid,
+        firstName: signUpData.firstName,
+        lastName: signUpData.lastName,
+        email: signUpData.email,
+        dateOfBirth: signUpData.dateOfBirth,
+        favoriteBand: signUpData.favoriteBand,
+        createdAt: serverTimestamp(),
+      });
+      navigate("/verify-email");
+      console.log("user added");
+      setSignUpData({
+        firstName: "",
+        lastName: "",
+        dateOfBirth: "",
+        favoriteBand: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+      setSignUpFeedback("Account created!");
+      setInterval(() => {
+        setSignUpFeedback("");
+      }, 5000);
+    } catch (error) {
+      setSignUpFeedback("Couldn´t sign up, please try again later");
+    }
   };
 
   return (
     <section className={styles.formWrapper}>
-      <form className={styles.signUpForm} noValidate>
+      <form className={styles.signUpForm} noValidate onSubmit={handleSubmit}>
         <h2>SIGN UP</h2>
         <div className={styles.formGroupsContainer}>
           <fieldset className={styles.formGroup}>
@@ -58,8 +107,8 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 value={signUpData.firstName}
               ></Input>
-              {signUpErrors && (
-                <p className={styles.errorMessage}>{signUpErrors.firstName}</p>
+              {errors && (
+                <p className={styles.errorMessage}>{errors.firstName}</p>
               )}
             </div>
             <div className={styles.formGroupInput}>
@@ -73,8 +122,8 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 value={signUpData.lastName}
               ></Input>
-              {signUpErrors && (
-                <p className={styles.errorMessage}>{signUpErrors.lastName}</p>
+              {errors && (
+                <p className={styles.errorMessage}>{errors.lastName}</p>
               )}
             </div>
             <div className={styles.formGroupInput}>
@@ -87,10 +136,8 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 value={signUpData.dateOfBirth}
               ></Input>
-              {signUpErrors && (
-                <p className={styles.errorMessage}>
-                  {signUpErrors.dateOfBirth}
-                </p>
+              {errors && (
+                <p className={styles.errorMessage}>{errors.dateOfBirth}</p>
               )}
             </div>
             <div className={styles.formGroupInput}>
@@ -110,19 +157,17 @@ const SignUp = () => {
           <fieldset className={styles.formGroup}>
             <legend className={styles.formGroupHeader}>ACCOUNT DETAILS</legend>
             <div className={styles.formGroupInput}>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="signUpUserEmail">Email</label>
               <Input
                 type="email"
                 name="email"
-                id="email"
+                id="signUpUserEmail"
                 placeholder="someone@example.com"
                 className={styles.formInput}
                 onChange={handleInputChange}
                 value={signUpData.email}
               ></Input>
-              {signUpErrors && (
-                <p className={styles.errorMessage}>{signUpErrors.email}</p>
-              )}
+              {errors && <p className={styles.errorMessage}>{errors.email}</p>}
             </div>
             <div className={styles.formGroupInput}>
               <label htmlFor="password">Password</label>
@@ -134,8 +179,8 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 value={signUpData.password}
               ></Input>
-              {signUpErrors && (
-                <p className={styles.errorMessage}>{signUpErrors.password}</p>
+              {errors && (
+                <p className={styles.errorMessage}>{errors.password}</p>
               )}
             </div>
             <div className={styles.formGroupInput}>
@@ -148,10 +193,8 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 value={signUpData.confirmPassword}
               ></Input>
-              {signUpErrors && (
-                <p className={styles.errorMessage}>
-                  {signUpErrors.confirmPassword}
-                </p>
+              {errors && (
+                <p className={styles.errorMessage}>{errors.confirmPassword}</p>
               )}
             </div>
           </fieldset>{" "}

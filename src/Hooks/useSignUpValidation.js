@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const useSignUpValidation = () => {
-  const [signUpErrors, setSignUpErrors] = useState({});
+  const [errors, setErrors] = useState({});
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.*\s).{8,}$/;
 
@@ -37,11 +37,12 @@ const useSignUpValidation = () => {
       newErrors.confirmPassword = "Passwords must match";
     }
 
-    setSignUpErrors(newErrors);
-    return Object.keys.length === 0;
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
   };
 
-  return { validateSignUp, signUpErrors };
+  return { validateSignUp, errors, setErrors };
 };
 
 export default useSignUpValidation;

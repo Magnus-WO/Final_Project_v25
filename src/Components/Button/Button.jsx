@@ -8,7 +8,7 @@ const Button = ({ children, onClick, className, value, type, ariaLabel }) => {
       onClick={onClick}
       value={value}
       type={type}
-      ariaLabel={ariaLabel}
+      aria-label={ariaLabel}
     >
       {children}
     </button>
