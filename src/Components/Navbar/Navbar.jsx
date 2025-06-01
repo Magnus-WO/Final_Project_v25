@@ -4,13 +4,21 @@ import styles from "./Navbar.module.css";
 import SoMeContainer from "../SoMeContainer/SoMeContainer";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
+
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleLogInButton = () => {
+    navigate("/sign-in");
+  };
   return (
     <nav className={styles.navbar}>
       {/* First row */}
       <div className={styles.firstRow}>
         <div className={styles.buttonContainer}>
-          <Button className={styles.loginButton}>LOG IN</Button>
+          <Button className={styles.loginButton} onClick={handleLogInButton}>
+            LOG IN
+          </Button>
         </div>
         <div className={styles.logoContainer}>
           <Link to="/">

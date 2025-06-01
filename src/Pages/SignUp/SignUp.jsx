@@ -5,7 +5,7 @@ import useSignUpValidation from "../../Hooks/useSignUpValidation";
 import useAuth from "../../Hooks/useAuthentication";
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   addDoc,
   collection,
@@ -209,6 +209,9 @@ const SignUp = () => {
         >
           SIGN UP
         </Button>
+        <Link to="/sign-in" className={styles.logInLink}>
+          Already have an account? Click here to log in.
+        </Link>
       </form>
     </section>
   );

@@ -1,0 +1,155 @@
+.formWrapper {
+  width: 100%;
+  height: 100vh;
+  min-height: fit-content;
+  background-image: var(--background-image2);
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+.signInForm {
+  height: 80%;
+  width: 30%;
+  padding: var(--space-lg);
+  background-color: var(--bg-color-muted);
+  color: var(--primary-color);
+
+  border-radius: var(--border-radius-sm);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-lg);
+}
+.formField {
+  height: fit-content;
+  width: 100%;
+  border-radius: var(--border-radius-sm);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.formGroup {
+  padding: var(--space-xs);
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: var(--space-xs);
+}
+
+.formGroup label {
+  font-size: var(--font-size-md);
+}
+
+.logInInput {
+  height: 24px;
+  min-width: 100%;
+
+  background: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius-xs);
+  padding: 3px;
+  font-family: var(--font-main);
+  letter-spacing: 1px;
+}
+
+.errorMessage {
+  color: var(--color-error);
+}
+
+.logInButton,
+.sendResetEmailButton {
+  height: 3rem;
+  width: 10rem;
+  font-size: var(--font-size-base);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--primary-color);
+  background-color: var(--bg-color-muted);
+}
+
+.logInButton:hover {
+  opacity: var(--hover-opacity);
+}
+
+.forgotPasswordButton,
+.signUpLink {
+  color: var(--color-accent);
+}
+
+.forgotPasswordButton:hover,
+.signUpLink:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Reset modal */
+
+.resetPasswordWrapper {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color-muted);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resetPasswordModal {
+  border: 1px solid white;
+  border-radius: var(--border-radius-sm);
+  height: 40%;
+  width: 30%;
+  background: var(--background-image2);
+  background-size: contain;
+  color: var(--primary-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-md);
+
+  padding: var(--space-md);
+}
+
+.resetPasswordEmail {
+  font-family: var(--font-main);
+  padding: 0 var(--space-xxs);
+  width: 40%;
+  height: 24px;
+}
+.sendResetEmailButton {
+  height: 2rem;
+  width: 10rem;
+}
+.sendResetEmailButton:hover {
+  opacity: var(--hover-opacity);
+}
+
+.closeResetModal {
+  color: var(--color-accent);
+}
+.closeResetModal:hover {
+  text-decoration: underline;
+  opacity: var(--hover-opacity);
+}

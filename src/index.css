@@ -67,5 +67,6 @@ button {
   --font-size-lg: 2.2rem;
   --font-size-xl: 3rem;
 
+  --border-radius-xs: 2px;
   --border-radius-sm: 5px;
 }
