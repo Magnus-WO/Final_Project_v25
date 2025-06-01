@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./Album.module.css";
-import Button from "../../Components/Button/Button";
+import Button from "../Button/Button";
 
 import audioFiles from "../../JS/audio";
 

@@ -4,21 +4,40 @@ import styles from "./Navbar.module.css";
 import SoMeContainer from "../SoMeContainer/SoMeContainer";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { getAuthContext } from "../../Context/authContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../firebaseConfig";
 
 const Navbar = () => {
+  const { user } = getAuthContext();
+
   const navigate = useNavigate();
 
   const handleLogInButton = () => {
     navigate("/sign-in");
   };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      navigate("/");
+    } catch (error) {}
+  };
+
   return (
     <nav className={styles.navbar}>
       {/* First row */}
       <div className={styles.firstRow}>
         <div className={styles.buttonContainer}>
-          <Button className={styles.loginButton} onClick={handleLogInButton}>
-            LOG IN
-          </Button>
+          {user ? (
+            <Button className={styles.loginButton} onClick={handleSignOut}>
+              LOG OUT
+            </Button>
+          ) : (
+            <Button className={styles.loginButton} onClick={handleLogInButton}>
+              LOG IN
+            </Button>
+          )}
         </div>
         <div className={styles.logoContainer}>
           <Link to="/">

@@ -1,9 +1,13 @@
 .album {
-  height: 60vh;
+  height: 80vh;
   width: 100%;
   border-top: 1px solid var(--primary-color);
   display: flex;
   flex-wrap: wrap;
+
+  background: var(--background-image2);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .album .headerContainer {
@@ -12,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-color);
+  color: var(--color-accent);
   font-size: var(--font-size-lg);
 }
 
@@ -29,7 +33,7 @@
 }
 
 .album .audioContainer {
-  height: 70%;
+  height: 50%;
   width: 50%;
 }
 

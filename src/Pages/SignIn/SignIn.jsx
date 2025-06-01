@@ -87,17 +87,15 @@ const SignIn = () => {
     }
 
     try {
-      const userCredentials = await signInWithEmailAndPassword(
+      await signInWithEmailAndPassword(
         auth,
         logInCredentials.logInEmail,
         logInCredentials.logInPassword
       );
-
       navigate("/");
       setLogInError("");
     } catch (error) {
       setLogInError("Wrong email or password");
-      console.log(error);
     }
   };
 

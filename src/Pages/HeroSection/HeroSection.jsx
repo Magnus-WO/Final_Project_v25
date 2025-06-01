@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
-import Album from "../Album/Album";
 
 const HeroSection = ({}) => {
   return (
@@ -17,7 +16,6 @@ const HeroSection = ({}) => {
           className={styles.heroImage}
         />
       </div>
-      <Album></Album>
     </section>
   );
 };

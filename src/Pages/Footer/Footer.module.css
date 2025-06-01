@@ -38,6 +38,7 @@
 
 .subscribe .subscribeHeader {
   font-size: var(--font-size-lg);
+  color: var(--color-accent);
 }
 
 .subscribe .subscribeIngres {
@@ -142,7 +143,7 @@
 .followLinksContainer .followHeaderContainer {
   width: 100%;
   height: 30%;
-  color: var(--primary-color);
+  color: var(--color-accent);
 
   display: flex;
   align-items: flex-end;
@@ -160,7 +161,7 @@
 }
 .connectLinksContainer .connectLinks a,
 .followLinksContainer .followLinks a {
-  color: var(--primary-color);
+  color: var(--color-text-muted);
 }
 
 .connectLinksContainer .connectLinks a:hover,
