@@ -3,12 +3,19 @@ import HeroSection from "../HeroSection/HeroSection";
 import BandSection from "../BandSection/BandSection";
 import Faq from "../FAQ/Faq";
 import Album from "../../Components/Album/Album";
+import audioFilesWJ from "../../JS/audioWithoutJudgement";
 
 const Home = () => {
+  const withoutJudgementImage = "/Assets/Images/WJalbumArtwork.JPG";
+
   return (
     <>
       <HeroSection></HeroSection>
-      <Album></Album>
+      <Album
+        title="Without Judgement"
+        audioFilesArray={audioFilesWJ}
+        artWork={withoutJudgementImage}
+      ></Album>
       <BandSection></BandSection>
       <Faq></Faq>
     </>
