@@ -1,6 +1,7 @@
 import styles from "./Card.module.css";
 import Button from "../Button/Button";
 import { useState } from "react";
+import { getCartContext } from "../../Context/cartContext";
 
 const Card = ({ member, className, merch, question }) => {
   // Toggling faq answer visibility
@@ -11,6 +12,17 @@ const Card = ({ member, className, merch, question }) => {
     } else {
       setIsVisible(false);
     }
+  };
+
+  // Getting selected size
+  const [selectedSize, setSelectedSize] = useState("small");
+  // Add merch to cart
+  const { dispatch } = getCartContext();
+  const handleAddToCart = () => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: { ...merch, selectedSize: selectedSize },
+    });
   };
 
   return (
@@ -59,7 +71,13 @@ const Card = ({ member, className, merch, question }) => {
           {/* insert currency and price from session storage */}
           <p>Price: {merch.price} NOK</p>
           {merch.sizes ? (
-            <select name="size" id="size">
+            <select
+              name="size"
+              id="size"
+              onChange={(e) => {
+                setSelectedSize(e.target.value);
+              }}
+            >
               {merch.sizes.map((size) => {
                 return (
                   <option value={size} key={size}>
@@ -76,6 +94,7 @@ const Card = ({ member, className, merch, question }) => {
               type="button"
               ariaLabel="add to cart"
               className={styles.addToCartButton}
+              onClick={handleAddToCart}
             >
               Add to cart
             </Button>
