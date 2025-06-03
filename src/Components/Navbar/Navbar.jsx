@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import styles from "./Navbar.module.css";
 import SoMeContainer from "../SoMeContainer/SoMeContainer";
@@ -9,6 +9,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../../firebaseConfig";
 
 const Navbar = () => {
+  const [currency, setCurrency] = useState("");
   const { user } = getAuthContext();
 
   const navigate = useNavigate();
@@ -24,6 +25,26 @@ const Navbar = () => {
     } catch (error) {}
   };
 
+  // Getting currency chosen by user
+  useEffect(() => {
+    const fetchCurrency = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3001/currency?q=${currency}`
+        );
+        const result = await response.json();
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchCurrency();
+    return () => {
+      setCurrency("");
+    };
+  }, [currency]);
+
   return (
     <nav className={styles.navbar}>
       {/* First row */}
@@ -38,6 +59,21 @@ const Navbar = () => {
               LOG IN
             </Button>
           )}
+          <select
+            name="currency"
+            id="currency"
+            onChange={(e) => {
+              setCurrency(e.target.value);
+            }}
+          >
+            <option value="">Select currency</option>
+            <option value="NOK">NOK</option>
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="SEK">SEK</option>
+            <option value="DKK">DKK</option>
+          </select>
         </div>
         <div className={styles.logoContainer}>
           <Link to="/">
