@@ -51,6 +51,37 @@ const Card = ({ member, className, merch, question }) => {
           </div>
         </li>
       )}
+      {/* Merch card */}
+      {merch && (
+        <div className={className}>
+          <h2>{merch.name}</h2>
+          <img src={merch.image} alt={merch.name} />
+          {/* insert currency and price from session storage */}
+          <p>Price: {merch.price} NOK</p>
+          {merch.sizes ? (
+            <select name="size" id="size">
+              {merch.sizes.map((size) => {
+                return (
+                  <option value={size} key={size}>
+                    {size}
+                  </option>
+                );
+              })}
+            </select>
+          ) : (
+            ""
+          )}
+          <div className={styles.merchButtons}>
+            <Button
+              type="button"
+              ariaLabel="add to cart"
+              className={styles.addToCartButton}
+            >
+              Add to cart
+            </Button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

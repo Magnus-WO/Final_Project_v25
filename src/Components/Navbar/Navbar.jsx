@@ -126,6 +126,12 @@ const Navbar = () => {
         >
           CONTACT
         </NavLink>
+        <NavLink
+          to="/cart"
+          className={({ isActive }) => (isActive ? styles.activeLink : "")}
+        >
+          CART
+        </NavLink>
       </div>
     </nav>
   );
