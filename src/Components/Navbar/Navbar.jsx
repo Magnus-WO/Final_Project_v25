@@ -43,7 +43,8 @@ const Navbar = () => {
     const fetchCurrency = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3001/currency?q=${currency}`
+          // `http://localhost:3001/currency?q=${currency}`
+          `https://v6.exchangerate-api.com/v6/${process.env.CURRENCY_API_KEY}/pair/NOK/${query}/100`
         );
         const result = await response.json();
         const conversionRate = result.conversion_rate;
