@@ -12,6 +12,7 @@ import Merch from "../Pages/Merch/Merch";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import Contact from "../Pages/Contact/Contact";
+import Cart from "../Pages/Cart/Cart";
 import NotFound from "../Pages/NotFound/NotFound";
 
 export const router = createBrowserRouter(
@@ -23,6 +24,7 @@ export const router = createBrowserRouter(
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/cart" element={<Cart />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )

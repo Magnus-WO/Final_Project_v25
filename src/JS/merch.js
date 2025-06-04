@@ -51,7 +51,7 @@ const merch = [
   },
   {
     name: "Dawn - cd",
-    image: "/public/Assets/Images/Dawn-CD.jpeg",
+    image: "/Assets/Images/Dawn-CD.jpeg",
     price: 180,
     info: "A cd with our debut EP Dawn",
     id: "dawn-cd",

@@ -1,0 +1,22 @@
+.counter {
+  border: 2px solid var(--color-text-muted);
+  border-radius: var(--border-radius-xs);
+  height: 2rem;
+  width: 5rem;
+  color: var(--primary-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.decreaseButton,
+.increaseButton {
+  color: var(--primary-color);
+  font-size: var(--font-size-md);
+}
+
+.decreaseButton:hover,
+.increaseButton:hover {
+  opacity: var(--hover-opacity);
+}

@@ -10,14 +10,13 @@
 .firstRow {
   height: 70%;
   width: 100%;
-  /* border: 2px solid white; */
 
   display: flex;
   align-items: flex-end;
   justify-content: center;
 
   gap: var(--space-md);
-  padding: var(--space-xl);
+  padding: 0 var(--space-xl);
 }
 .buttonContainer,
 .logoContainer,
@@ -29,18 +28,34 @@
   justify-content: center;
 }
 
+.buttonContainer {
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-base);
+}
+
 .buttonContainer .loginButton {
   height: 3rem;
   width: 10rem;
   font-size: var(--font-size-base);
   border: 1px solid var(--primary-color);
   border-radius: var(--border-radius-sm);
-  color: var(--primary-color);
+  color: var(--color-accent);
   background-color: var(--bg-color-muted);
 }
 
 .buttonContainer .loginButton:hover {
   opacity: var(--hover-opacity);
+}
+
+.buttonContainer .currencySelector {
+  height: 1.2rem;
+  width: 10rem;
+  text-align: center;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--primary-color);
+  background-color: var(--bg-color-muted);
 }
 
 .logoContainer {

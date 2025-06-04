@@ -33,7 +33,7 @@ const Navbar = () => {
           `http://localhost:3001/currency?q=${currency}`
         );
         const result = await response.json();
-        console.log(result);
+        // console.log(result);
       } catch (error) {
         console.log(error);
       }
@@ -62,6 +62,7 @@ const Navbar = () => {
           <select
             name="currency"
             id="currency"
+            className={styles.currencySelector}
             onChange={(e) => {
               setCurrency(e.target.value);
             }}
