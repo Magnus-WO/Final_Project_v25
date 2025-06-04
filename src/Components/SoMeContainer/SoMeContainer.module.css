@@ -16,3 +16,23 @@
 .someContainer .soMeIcon:hover {
   opacity: var(--hover-opacity);
 }
+
+@media screen and (max-width: 980px) {
+  .someContainer {
+    gap: var(--space-base);
+
+    height: 80%;
+    width: 6rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .someContainer {
+    display: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    gap: var(--space-sm);
+  }
+}

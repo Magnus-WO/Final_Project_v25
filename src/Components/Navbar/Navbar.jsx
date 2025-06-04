@@ -12,7 +12,13 @@ import { auth } from "../../../firebaseConfig";
 const Navbar = () => {
   const [currency, setCurrency] = useState("");
   const { user } = getAuthContext();
+  const [burgerIsactive, setBurgerIsActive] = useState(false);
   const navigate = useNavigate();
+
+  // Toggling burger menu class
+  const toggleBurgerMenu = () => {
+    burgerIsactive ? setBurgerIsActive(false) : setBurgerIsActive(true);
+  };
 
   const handleLogInButton = () => {
     navigate("/sign-in");
@@ -94,49 +100,71 @@ const Navbar = () => {
 
       {/* Second row */}
       <div className={styles.secondRow}>
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? styles.activeLink : "")}
+        <div className={styles.hamburgerContainer} onClick={toggleBurgerMenu}>
+          <img
+            src="/public/Assets/Icons/hamburger-menu-svgrepo-com.svg"
+            alt="hamburger menu"
+            className={styles.hamburgerIcon}
+          />
+        </div>
+        <div
+          className={
+            burgerIsactive
+              ? styles.navbarLinksContainerActive
+              : styles.navbarLinksContainer
+          }
         >
-          HOME
-        </NavLink>
-        <NavLink
-          to="/discography"
-          className={({ isActive }) => (isActive ? styles.activeLink : "")}
-        >
-          DISCOGRAPHY
-        </NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+            onClick={toggleBurgerMenu}
+          >
+            HOME
+          </NavLink>
+          <NavLink
+            to="/discography"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+            onClick={toggleBurgerMenu}
+          >
+            DISCOGRAPHY
+          </NavLink>
 
-        <NavLink
-          to="/merch"
-          className={({ isActive }) => (isActive ? styles.activeLink : "")}
-        >
-          MERCH
-        </NavLink>
-        <NavLink
-          to="/media"
-          className={({ isActive }) => (isActive ? styles.activeLink : "")}
-        >
-          MEDIA
-        </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) => (isActive ? styles.activeLink : "")}
-        >
-          ABOUT
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) => (isActive ? styles.activeLink : "")}
-        >
-          CONTACT
-        </NavLink>
-        <NavLink
-          to="/cart"
-          className={({ isActive }) => (isActive ? styles.activeLink : "")}
-        >
-          CART
-        </NavLink>
+          <NavLink
+            to="/merch"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+            onClick={toggleBurgerMenu}
+          >
+            MERCH
+          </NavLink>
+          <NavLink
+            to="/media"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+            onClick={toggleBurgerMenu}
+          >
+            MEDIA
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+            onClick={toggleBurgerMenu}
+          >
+            ABOUT
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+            onClick={toggleBurgerMenu}
+          >
+            CONTACT
+          </NavLink>
+          <NavLink
+            to="/cart"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+            onClick={toggleBurgerMenu}
+          >
+            CART
+          </NavLink>
+        </div>
       </div>
     </nav>
   );

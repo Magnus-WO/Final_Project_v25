@@ -22,6 +22,7 @@
 
   gap: var(--space-sm);
   color: var(--primary-color);
+  text-align: center;
 }
 
 .textContainer h1 {
@@ -45,4 +46,34 @@
   height: 90%;
   width: 90%;
   border-radius: var(--border-radius-sm);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 960px) {
+  .textContainer h1 {
+    font-size: var(--font-size-md);
+  }
+  .textContainer p {
+    font-size: var(--font-size-base);
+  }
+  .imageContainer {
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .textContainer {
+    width: 100%;
+  }
+  .textContainer h1 {
+    font-size: var(--font-size-base);
+  }
+
+  .textContainer p {
+    font-size: var(--font-size-sm);
+  }
+  .imageContainer {
+    height: 20vh;
+    height: 8rem;
+  }
 }

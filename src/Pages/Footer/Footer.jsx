@@ -49,8 +49,6 @@ const Footer = () => {
         setSubscribeMessage("");
       }, 3000);
     } catch (error) {
-      console.log(error);
-
       setSubscribeMessage("Could not subscribe, please try again later");
     }
   };

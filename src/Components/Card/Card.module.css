@@ -78,3 +78,10 @@
   opacity: var(--hover-opacity);
   color: var(--primary-color);
 }
+
+/* Responsiveness */
+@media screen and (max-width: 510px) {
+  .questionHeader h2 {
+    font-size: var(--font-size-base);
+  }
+}

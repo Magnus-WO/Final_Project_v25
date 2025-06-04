@@ -42,7 +42,7 @@
 
 .formGroup {
   width: 100%;
-  min-height: 500px;
+  height: 500px;
   border-radius: var(--border-radius-sm);
   padding: var(--space-sm);
 
@@ -103,10 +103,23 @@
 }
 
 .logInLink {
-  color: var(--color-text-muted);
+  color: var(--color-accent);
 }
 
 .logInLink:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 510px) {
+  .signUpForm {
+    width: 80%;
+  }
+  .signUpForm .formGroupsContainer {
+    flex-direction: column;
+  }
+  .formGroup {
+    height: 400px;
+  }
 }

@@ -3,6 +3,7 @@
   height: fit-content;
   width: 100%;
   background-image: var(--background-image2);
+  background-repeat: round;
   padding: var(--space-lg);
 
   display: flex;

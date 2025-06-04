@@ -5,8 +5,7 @@ const HeroSection = ({}) => {
   return (
     <section className={styles.heroSection}>
       <div className={styles.textContainer}>
-        <h1>UNLEASH THE POWER OF </h1>
-        <h1>NORWEGIAN GROOVE METAL</h1>
+        <h1>UNLEASH THE POWER OF NORWEGIAN GROOVE METAL</h1>
         <p>EXPERIENCE OUR LATEST RELEASE AND FEEL THE INTENSITY</p>
       </div>
       <div className={styles.imageContainer}>

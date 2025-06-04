@@ -76,3 +76,18 @@
   align-items: center;
   justify-content: space-around;
 }
+
+@media screen and (max-width: 510px) {
+  .headerContainer h1 {
+    font-size: var(--font-size-md);
+  }
+  .headerContainer p {
+    font-size: var(--font-size-base);
+  }
+  .memberCard {
+    width: 240px;
+    height: 300px;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--bg-color-muted);
+  }
+}
