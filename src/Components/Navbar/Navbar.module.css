@@ -109,6 +109,20 @@
 }
 
 /* Responsiveness */
+@media screen and (min-width: 961px) {
+  .navbarLinksContainerActive {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: var(--space-xl);
+
+    padding: var(--space-sm);
+  }
+}
+
 @media screen and (max-width: 960px) {
   .hamburgerContainer {
     display: block;
