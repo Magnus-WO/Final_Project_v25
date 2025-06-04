@@ -1,11 +1,14 @@
 import styles from "./Card.module.css";
 import Button from "../Button/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getCartContext } from "../../Context/cartContext";
+import { getCurrencyContext } from "../../Context/currencyContext";
 
 const Card = ({ member, className, merch, question }) => {
   // Toggling faq answer visibility
   const [isVisible, setIsVisible] = useState(false);
+  const [conversionRate, setConversionRate] = useState("");
+
   const handleAnswerVisibility = () => {
     if (!isVisible) {
       setIsVisible(true);
@@ -25,6 +28,8 @@ const Card = ({ member, className, merch, question }) => {
     });
   };
 
+  // Getting conversion from currency Context
+  const { currencyConversionRate, chosenCurrency } = getCurrencyContext();
   return (
     <>
       {member && (
@@ -69,7 +74,10 @@ const Card = ({ member, className, merch, question }) => {
           <h2>{merch.name}</h2>
           <img src={merch.image} alt={merch.name} />
           {/* insert currency and price from session storage */}
-          <p>Price: {merch.price} NOK</p>
+          <p>
+            Price: {(merch.price * currencyConversionRate).toFixed(2)}{" "}
+            {chosenCurrency}
+          </p>
           {merch.sizes ? (
             <select
               name="size"

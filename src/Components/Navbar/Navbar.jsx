@@ -5,13 +5,13 @@ import SoMeContainer from "../SoMeContainer/SoMeContainer";
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { getAuthContext } from "../../Context/authContext";
+import { getCurrencyContext } from "../../Context/currencyContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../firebaseConfig";
 
 const Navbar = () => {
   const [currency, setCurrency] = useState("");
   const { user } = getAuthContext();
-
   const navigate = useNavigate();
 
   const handleLogInButton = () => {
@@ -25,7 +25,14 @@ const Navbar = () => {
     } catch (error) {}
   };
 
-  // Getting currency chosen by user
+  // Destructuring from currency context
+  const { setCurrencyConversionRate, setChosenCurrency } = getCurrencyContext();
+
+  const handleCurrency = (e) => {
+    setCurrency(e.target.value);
+    setChosenCurrency(e.target.value);
+  };
+  // // Getting currency chosen by user
   useEffect(() => {
     const fetchCurrency = async () => {
       try {
@@ -33,16 +40,15 @@ const Navbar = () => {
           `http://localhost:3001/currency?q=${currency}`
         );
         const result = await response.json();
-        // console.log(result);
+        const conversionRate = result.conversion_rate;
+        setCurrencyConversionRate(conversionRate);
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchCurrency();
-    return () => {
-      setCurrency("");
-    };
+    return () => {};
   }, [currency]);
 
   return (
@@ -63,9 +69,7 @@ const Navbar = () => {
             name="currency"
             id="currency"
             className={styles.currencySelector}
-            onChange={(e) => {
-              setCurrency(e.target.value);
-            }}
+            onChange={handleCurrency}
           >
             <option value="">Select currency</option>
             <option value="NOK">NOK</option>

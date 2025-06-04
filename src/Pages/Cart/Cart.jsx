@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Cart.module.css";
 import { getCartContext } from "../../Context/cartContext";
 import { getAuthContext } from "../../Context/authContext";
+import { getCurrencyContext } from "../../Context/currencyContext";
 import { useMemo, useState } from "react";
 
 import Button from "../../Components/Button/Button";
@@ -106,6 +107,21 @@ const Cart = () => {
     });
   };
 
+  // Removing item from cart
+  const handleRemoveItem = (id) => {
+    dispatch({ type: "REMOVE_FROM_CART", payload: id });
+  };
+
+  // Converting to users chosen currency
+  const { currencyConversionRate, chosenCurrency } = getCurrencyContext();
+
+  // Adding cart total
+  const cartTotalPrice = useMemo(() => {
+    return cart
+      .reduce((total, item) => total + item.price * item.quantity, 0)
+      .toFixed(2);
+  }, [cart]);
+
   return (
     <section className={styles.cart}>
       {cart.length === 0 ? (
@@ -122,17 +138,30 @@ const Cart = () => {
                     className={styles.cartImage}
                   />
                   <h2>{item.name}</h2>
-                  <p>Price: {item.price} NOK</p>
-                  <p>Total: {(item.price * item.quantity).toFixed(2)}</p>
+                  <p>
+                    Price: {(item.price * currencyConversionRate).toFixed(2)}{" "}
+                    {chosenCurrency}
+                  </p>
+                  <p>
+                    Total:{" "}
+                    {(
+                      item.price *
+                      currencyConversionRate *
+                      item.quantity
+                    ).toFixed(2)}
+                  </p>
                   <p>Size: {item.selectedSize}</p>
                   <div className={styles.cartItemButtonsContainer}>
                     <Counter item={item}></Counter>
 
                     <Button
-                      ariaLabel="delete item"
+                      ariaLabel="Remove item from cart"
                       className={styles.cartDeleteButton}
+                      onClick={() => {
+                        handleRemoveItem(item.id);
+                      }}
                     >
-                      Delete
+                      Remove
                     </Button>
                   </div>
                 </li>
@@ -156,7 +185,10 @@ const Cart = () => {
             className={styles.paymentForm}
             onSubmit={submitOrder}
           >
-            <h2>Your total: </h2>
+            <h2>
+              Your total: {cartTotalPrice * currencyConversionRate}
+              {chosenCurrency}
+            </h2>
             <div className={styles.paymentInfoContainer}>
               <label htmlFor="paymentEmail">Email</label>
               <Input

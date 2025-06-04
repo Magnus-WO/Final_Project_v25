@@ -13,7 +13,7 @@ const app = express();
 app.use(cors());
 
 app.get("/currency", async (req, res) => {
-  const query = req.query.q || "NOK";
+  const query = req.query.q;
   try {
     const response = await fetch(
       `${BASE_URL}/${process.env.CURRENCY_API_KEY}/pair/NOK/${query}/100`

@@ -58,6 +58,7 @@
 
 .formGroup label {
   font-size: var(--font-size-md);
+  font-family: var(--font-main);
 }
 
 .logInInput {
