@@ -13,7 +13,10 @@ It uses Firestore and Firebase authentication, as well as an API from Exchange r
 
 Only for use by the creator and for the purposes of grading.
 
-### Protoype
+### Links
 
 This is the link to the prototype on Figma
 https://www.figma.com/design/8s8y2ExXPRNA72FvagnASx/Final-exam_spring_2025?node-id=0-1&p=f&t=QQhoWT7bz7sMyEtA-0
+
+Link to github repo
+https://github.com/Magnus-WO/Final_Project_v25.git
