@@ -1,12 +1,19 @@
-# React + Vite
+# Final Project Spring 2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This is my final project for spring of 2025. It consist of a website for my band, where users can listen to our music and shop for merch.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+The website feauters authentication, a place for users to contact us by mail, newsletter subscription, a shopping cart and currency conversion so the user can see the prices in their selected currency.
+It uses Firestore and Firebase authentication, as well as an API from Exchange rate API.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Legal
+
+Only for use by the creator and for the purposes of grading.
+
+### Protoype
+
+This is the link to the prototype on Figma
+https://www.figma.com/design/8s8y2ExXPRNA72FvagnASx/Final-exam_spring_2025?node-id=0-1&p=f&t=QQhoWT7bz7sMyEtA-0
