@@ -186,7 +186,7 @@ const Cart = () => {
             onSubmit={submitOrder}
           >
             <h2>
-              Your total: {cartTotalPrice * currencyConversionRate}
+              Your total: {(cartTotalPrice * currencyConversionRate).toFixed(2)}
               {chosenCurrency}
             </h2>
             <div className={styles.paymentInfoContainer}>
