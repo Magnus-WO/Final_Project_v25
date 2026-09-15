@@ -26,6 +26,6 @@ export const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="*" element={<NotFound />} />
-    </Route>
-  )
+    </Route>,
+  ),
 );

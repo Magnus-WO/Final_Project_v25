@@ -10,7 +10,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../../firebaseConfig";
 
 const Navbar = () => {
-  const [currency, setCurrency] = useState("");
+  const [currency, setCurrency] = useState("NOK");
   const { user } = getAuthContext();
   const [burgerIsactive, setBurgerIsActive] = useState(false);
   const navigate = useNavigate();
@@ -42,10 +42,13 @@ const Navbar = () => {
   useEffect(() => {
     const fetchCurrency = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:3001/currency?q=${currency}`
-        );
+        const response = await fetch(`/api/currency?currency=${currency}`);
+
+        if (!response.ok) {
+          throw new Error(`Request failed: ${response.status}`);
+        }
         const result = await response.json();
+
         const conversionRate = result.conversion_rate;
         setCurrencyConversionRate(conversionRate);
       } catch (error) {
