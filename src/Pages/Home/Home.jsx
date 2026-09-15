@@ -4,7 +4,7 @@ import HeroSection from "../HeroSection/HeroSection";
 import Faq from "../FAQ/Faq";
 import Album from "../../Components/Album/Album";
 import audioFilesWJ from "../../JS/audioWithoutJudgement";
-import BandSection from "../BandSection/BandSection";
+import BandSection from "../../Components/BandSection/BandSection";
 const Home = () => {
   const withoutJudgementImage = "/Assets/Images/WJalbumArtwork.JPG";
 

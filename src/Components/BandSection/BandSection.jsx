@@ -1,5 +1,5 @@
 import styles from "./BandSection.module.css";
-import Card from "../../Components/Card/Card";
+import Card from "../Card/Card";
 import bandMembers from "../../JS/bandMembers";
 
 const BandSection = ({ className }) => {
