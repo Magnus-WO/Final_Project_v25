@@ -2,7 +2,7 @@ import styles from "./BandSection.module.css";
 import Card from "../../Components/Card/Card";
 import bandMembers from "../../JS/bandMembers";
 
-const CardSection = ({ className, Filter }) => {
+const BandSection = ({ className, Filter }) => {
   return (
     <section className={`${className} ${styles.cardSection}`}>
       <div className={styles.headerContainer}>
@@ -24,4 +24,4 @@ const CardSection = ({ className, Filter }) => {
   );
 };
 
-export default CardSection;
+export default BandSection;
